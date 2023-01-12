@@ -26,7 +26,7 @@ node_modules/jsnlog/jsnlog.ts (3:22)
     at ModuleLoader.addModuleSource (\JsnLogRollup\node_modules\rollup\dist\shared\rollup.js:23404:20)
 ```
 
-Save `main.ts` unchanged again, rollup produce different error:
+Save `index.ts` unchanged again, rollup produce different error:
 ```
 [!] RollupError: "JL" is not exported by "node_modules/jsnlog/jsnlog.ts", imported by "index.ts".
 https://rollupjs.org/guide/en/#error-name-is-not-exported-by-module
@@ -49,6 +49,13 @@ index.ts (1:9)
 
 Comment `index.ts`'s line `JL().info(message);` fixed the problem, but I need `JL()`.
 
-Comments in `rollup.config.mjs` and `index.html` shows some of my effort, all failed.
+Use `external/globals` in `rollup.config.mjs` makes rollup happy. But `index.html` failed with:
+```
+Uncaught TypeError: Failed to resolve module specifier "jsnlog". Relative references must start with either "/", "./", or "../".
+```
 
-I hope to use ES module. But if it's not possible, UMD is acceptable to me.
+`<script src="node_modules/jsnlog/jsnlog.js">` or `import './node_modules/jsnlog/jsnlog.js'` in `index.html` can't help.
+
+Comments in `rollup.config.mjs` and `index.html` shows these efforts, all failed.
+
+I hope to use ES module. But if it's not possible, UMD is acceptable to me. I must be missing some basic knowledge of these things. Thanks for any help.
