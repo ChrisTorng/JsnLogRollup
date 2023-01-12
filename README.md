@@ -9,6 +9,10 @@
 
 ## Problem
 
+This problem was asked in Stack Overflow [Rollup Error: Unexpected token on JsnLog's ts: import JSNLogAppender = JL.JSNLogAppender](https://stackoverflow.com/questions/75091247/rollup-error-unexpected-token-on-jsnlogs-ts-import-jsnlogappender-jl-jsnlog).
+
+I would like to use [JsnLog](https://jsnlog.com/) with [ES6](https://jsnlog.com/Documentation/HowTo/LoadingJsFile/ES6) way, take [jsnlog.ES6Demo main.js](https://github.com/mperdeck/jsnlog.ES6Demo/blob/master/es6Demo/es6/main.js) as `index.ts`.
+
 I can't make Rollup/TypeScript/JsnLog work together. `npm run rollup` shows:
 ```
 [!] RollupError: Unexpected token (Note that you need plugins to import files that are not JavaScript)
