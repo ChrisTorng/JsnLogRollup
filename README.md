@@ -54,9 +54,7 @@ index.ts (1:9)
 Comment `index.ts`'s line `JL().info(message);` fixed the problem, but I need `JL()`.
 
 Use `external/globals` in `rollup.config.mjs` makes rollup happy. But `index.html` failed with:
-```
-Uncaught TypeError: Failed to resolve module specifier "jsnlog". Relative references must start with either "/", "./", or "../".
-```
+> Uncaught TypeError: Failed to resolve module specifier "jsnlog". Relative references must start with either "/", "./", or "../".
 
 `<script src="node_modules/jsnlog/jsnlog.js">` or `import './node_modules/jsnlog/jsnlog.js'` in `index.html` can't help.
 
